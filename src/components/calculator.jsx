@@ -1,45 +1,38 @@
 import React from 'react';
 import '../index.css';
+import Buttons from './Buttons';
+import calculate from '../logic/calculate';
 
 class CalDesign extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      total: 0,
+      operation: null,
+      next: null,
+    };
   }
 
+  onClick = (e) => {
+    this.setState((state) => calculate(state, e.target.innerText));
+  };
+
   render() {
+    const { total } = this.state;
+    const { operation } = this.state;
+    const { next } = this.state;
+    const btn = {
+      value: ['AC', '+/-', '%', '÷', 7, 8, 9, 'x', 4, 5, 6, '-', 1, 2, 3, '+', 0, '.', ' ='],
+    };
+
     return (
       <div className="calculator">
-        <div className="row"><input className="input" value="0" /></div>
-        <div className="row">
-          <div className="colr-grey item">AC</div>
-          <div className="colr-grey item">+/-</div>
-          <div className="colr-grey item">%</div>
-          <div className="colr-orng item">+</div>
+        <div className="result">
+          {total}
+          {operation}
+          {next}
         </div>
-        <div className="row">
-          <div className="colr-grey item">7</div>
-          <div className="colr-grey item">8</div>
-          <div className="colr-grey item">9</div>
-          <div className="colr-orng item">x</div>
-        </div>
-        <div className="row">
-          <div className="colr-grey item">4</div>
-          <div className="colr-grey item">5/-</div>
-          <div className="colr-grey item">6</div>
-          <div className="colr-orng item">-</div>
-        </div>
-        <div className="row">
-          <div className="colr-grey item">1</div>
-          <div className="colr-grey item">2</div>
-          <div className="colr-grey item">3</div>
-          <div className="colr-orng item">+</div>
-        </div>
-        <div className="last row">
-          <div className="colr-grey item-zero">0</div>
-          <div className="colr-grey item">.</div>
-          <div className="colr-orng item">=</div>
-        </div>
+        <Buttons btn={btn} click={this.onClick} />
       </div>
     );
   }
