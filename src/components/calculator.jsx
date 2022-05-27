@@ -1,41 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../index.css';
 import Buttons from './Buttons';
 import calculate from '../logic/calculate';
 
-class CalDesign extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      total: 0,
-      operation: null,
-      next: null,
-    };
-  }
+const CalDesign = () => {
+  const [displayed, setDisplayed] = useState({ total: 0, next: '', operation: '' });
 
-  onClick = (e) => {
-    this.setState((state) => calculate(state, e.target.innerText));
+  const onClick = (e) => {
+    setDisplayed((state) => calculate(state, e.target.innerText));
   };
 
-  render() {
-    const { total } = this.state;
-    const { operation } = this.state;
-    const { next } = this.state;
-    const btn = {
-      value: ['AC', '+/-', '%', '÷', 7, 8, 9, 'x', 4, 5, 6, '-', 1, 2, 3, '+', 0, '.', ' ='],
-    };
+  const { total, next, operation } = displayed;
 
-    return (
-      <div className="calculator">
-        <div className="result">
-          {total}
-          {operation}
-          {next}
-        </div>
-        <Buttons btn={btn} click={this.onClick} />
+  return (
+    <div className="calculator">
+      <div className="result">
+        {total}
+        {operation}
+        {next}
       </div>
-    );
-  }
-}
+      <Buttons click={onClick} />
+    </div>
+  );
+};
 
 export default CalDesign;
