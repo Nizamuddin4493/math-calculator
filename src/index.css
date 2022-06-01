@@ -1,21 +1,24 @@
 * {
+  font-family: 'Comic Neue', cursive;
+  font-weight: bold;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 #root {
-  display: flex;
+  display: block;
   justify-content: center;
-  margin-top: 5%;
 }
 
 .calculator {
-  /* width:400px;
-  height: 500px; */
+  width: 320px;
+  height: 600px;
   display: flex;
   flex-direction: column;
-  text-align: center;
+  align-content: flex-end;
+  float: right;
+  margin-right: 30px;
 }
 
 .row {
@@ -83,15 +86,292 @@ input:active {
   background-color: #dfdfdf;
 }
 
-.buttons button {
+button .buttons {
   border: 1px solid #d0d0d0;
 }
 
-.buttons button:nth-child(17) {
+button:nth-child(17) .buttons {
   grid-area: 5/1/5/3;
+}
+
+button {
+  font-size: 15px;
+  margin: 10px auto;
+  padding: 5px;
+  width: 100px;
+  height: 35px;
+  background-color: white;
+  border: 3px solid black;
 }
 
 .buttons button:nth-child(4n),
 .buttons button:last-child {
   background-color: #ff8e00;
+}
+
+nav {
+  width: 100%;
+}
+
+.website-top {
+  text-align: center;
+  border: 5px solid black;
+  margin-bottom: 10px;
+  background: lightgrey;
+}
+
+.a-web-page {
+  margin: 10px;
+}
+
+.web-content {
+  display: flex;
+  justify-content: center;
+}
+
+.arrows {
+  max-width: 70px;
+  margin-right: 40px;
+}
+
+.cross {
+  width: 50px;
+  height: 60px;
+  padding-bottom: 0;
+  margin-right: 50px;
+}
+
+.home {
+  max-width: 65px;
+  margin-right: 75px;
+}
+
+.address-bar {
+  display: flex;
+  align-items: flex-start;
+  width: 700px;
+  height: 40px;
+  border-radius: 15px;
+  border: 4px solid black;
+  background-color: white;
+  margin-top: 12px;
+  margin-left: 20px;
+  margin-right: 200px;
+}
+
+.address {
+  font-size: 25px;
+  padding-left: 7px;
+}
+
+.search {
+  max-width: 170px;
+}
+
+.navigation {
+  border: black 4px solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 98%;
+  margin: auto;
+}
+
+.nav-title {
+  padding-left: 5px;
+}
+
+.nav-title h2 {
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.link-container {
+  padding: 0 20px;
+}
+
+.link-border {
+  border-right: black 4px solid;
+}
+
+.nav-link-item {
+  margin: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.date-time {
+  text-align: right;
+  width: 100%;
+  font-size: 25px;
+  padding-right: 40px;
+  margin: 10px;
+}
+
+.main-Container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.all-books {
+  font-size: 30px;
+  margin: 20px 20px;
+}
+
+.book {
+  padding: 30px;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.book:nth-child(odd) {
+  background: lightgrey;
+}
+
+.book-author {
+  margin-left: 10px;
+}
+
+.main-title {
+  text-align: center;
+  margin: 40px;
+}
+
+.listShow {
+  border: 5px solid black;
+  padding: 20px;
+  position: relative;
+}
+
+.horizontal-line {
+  max-width: 25%;
+  margin: auto;
+  border-top: 4px solid black;
+  margin-top: 50px;
+}
+
+.remove-button {
+  margin-left: 100px;
+  position: absolute;
+  right: 30px;
+  border: 4px solid #000;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  box-shadow: 4px 4px #000;
+}
+
+.add-title {
+  margin: 50px auto 25px auto;
+}
+
+.add {
+  margin-top: 10px;
+  width: 80px;
+  height: 30px;
+  float: right;
+  border: 4px solid #000;
+  background-color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 4px 4px #000;
+}
+
+.add-books {
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-books h4 {
+  display: flex;
+  justify-content: center;
+  font-size: 35px;
+  font-weight: 700;
+  padding-top: 10px;
+}
+
+.input-book {
+  display: flex;
+  justify-content: center;
+}
+
+::placeholder {
+  color: rgb(82, 82, 82);
+  padding-left: 5px;
+}
+
+.author {
+  border: 4px solid #000;
+  margin-top: 10px;
+  font-size: 20px;
+  background-color: #fff;
+  font-weight: 700;
+  height: 35px;
+}
+
+.title {
+  border: 4px solid #000;
+  font-size: 20px;
+  background-color: #fff;
+  font-weight: 700;
+  height: 35px;
+}
+
+.contact-action {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.contact-title {
+  font-size: 37px;
+  margin: 20px;
+}
+
+.contact-paragraph {
+  font-size: 30px;
+}
+
+.bullet-points {
+  text-align: justify;
+  font-size: 30px;
+  margin: 30px 60px;
+}
+
+.copyright-text {
+  border: 4px solid #000;
+  font-size: 30px;
+  margin-top: 30px;
+  padding: 5px;
+}
+
+.footer {
+  border: 4px solid #000;
+  margin: 0;
+  height: 50px;
+  width: 100%;
+  background: lightgray;
+  display: flex;
+  align-items: center;
+  font-size: 35px;
+  font-weight: 700;
+  justify-content: flex-end;
+}
+
+.bars {
+  margin: 10px;
+}
+
+.mian-txt-body {
+  margin: 50px auto 200px auto;
+  width: 900px;
 }
