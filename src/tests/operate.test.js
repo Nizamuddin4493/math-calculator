@@ -26,9 +26,7 @@ describe('Checking if our operate javascript works well', () => {
   });
 
   test('Check if it returns an error string when we try to operate module by zero', () => {
-    expect(operate('2', '0', '%')).toStrictEqual(
-      "Can't find modulo as can't divide by 0."
-    );
+    expect(operate('2', '0', '%')).toStrictEqual("Can't find modulo as can't divide by 0.");
   });
 
   test('Check if it throws an error when the operation is unknown', () => {
