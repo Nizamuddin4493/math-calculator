@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<nav>
+  <div
+    className="website-top"
+  >
+    <div
+      className="website-title"
+    >
+      <h2
+        className="a-web-page"
+      >
+        A Web Page
+      </h2>
+    </div>
+    <div
+      className="web-content"
+    >
+      <img
+        alt="left arrow"
+        className="arrows"
+        src="left.png"
+      />
+      <img
+        alt="right arrow"
+        className="arrows"
+        src="right.png"
+      />
+      <img
+        alt="delete"
+        className="cross"
+        src="delete-cross.png"
+      />
+      <img
+        alt="home"
+        className="home"
+        src="home.png"
+      />
+      <div
+        className="address-bar"
+      >
+        <p
+          className="address"
+        >
+          https://
+        </p>
+      </div>
+      <img
+        alt="search"
+        className="search"
+        src="searching-bar3.png"
+      />
+    </div>
+  </div>
+  <div
+    className="navigation"
+  >
+    <div
+      className="nav-title"
+    >
+      <h2>
+        Math Magicians
+      </h2>
+    </div>
+    <div
+      className="nav-links"
+    >
+      <div
+        className="link-container link-border"
+      >
+        <h4
+          className="nav-link-item list-action"
+        >
+          <a
+            href="/"
+            onClick={[Function]}
+          >
+            Home
+          </a>
+        </h4>
+      </div>
+      <div
+        className="link-container link-border"
+      >
+        <h4
+          className="nav-link-item right add-action"
+        >
+          <a
+            href="/calDesign"
+            onClick={[Function]}
+          >
+            Calculator
+          </a>
+        </h4>
+      </div>
+      <div
+        className="link-container"
+      >
+        <h4
+          className="nav-link-item contact-action"
+        >
+          <a
+            href="/quote"
+            onClick={[Function]}
+          >
+            Quote
+          </a>
+        </h4>
+      </div>
+    </div>
+  </div>
+</nav>
+`;
