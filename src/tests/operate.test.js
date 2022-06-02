@@ -1,37 +1,35 @@
 import operate from '../logic/operate';
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import calculate from '../logic/calculate';
 
-describe('AC operation', () => {
-  it('Check the AC operation', () => {
-    const input = {
-      total: 5,
-      next: 6,
-      operation: null,
-    };
-    const output = {
-      total: null,
-      next: null,
-      operation: null,
-    };
-    expect(calculate(input, 'AC')).toStrictEqual(output);
+describe('Checking if our operate javascript works well', () => {
+  test('Check if it adds correctly', () => {
+    expect(operate('2', '3', '+')).toStrictEqual('5');
   });
-});
 
-describe('Plus + operation', () => {
-  it('Check the sum operation', () => {
-    const input = {
-      total: 5,
-      next: null,
-      operation: null,
-    };
+  test('Check if it subtracts correctly', () => {
+    expect(operate('5', '3', '-')).toStrictEqual('2');
+  });
 
-    const output = {
-      total: 5,
-      next: null,
-      operation: '+',
-    };
-    expect(calculate(input, '+')).toStrictEqual(output);
+  test('Check if it devides correctly', () => {
+    expect(operate('15', '3', '÷')).toStrictEqual('5');
+  });
+
+  test('Check if it multiplies correctly', () => {
+    expect(operate('3', '3', 'x')).toStrictEqual('9');
+  });
+
+  test('Check if it returns an error string when we try to devide by zero', () => {
+    expect(operate('2', '0', '÷')).toStrictEqual("Can't divide by 0.");
+  });
+
+  test('Check if modulo works correctly', () => {
+    expect(operate('5', '3', '%')).toStrictEqual('2');
+  });
+
+  test('Check if it returns an error string when we try to operate module by zero', () => {
+    expect(operate('2', '0', '%')).toStrictEqual("Can't find modulo as can't divide by 0.");
+  });
+
+  test('Check if it throws an error when the operation is unknown', () => {
+    expect(() => operate(('2', '3', '*')).toThrow("Unknown operation '*'"));
   });
 });
